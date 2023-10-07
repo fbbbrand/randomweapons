@@ -1,19 +1,3 @@
-document.getElementById('btnWeapons').addEventListener('click', showImages);
-
-function showImages() {
-    var images = document.querySelectorAll('.grid-container div');
-    images.forEach(function(image) {
-        image.style.display = 'block';
-    });
-}
-
-document.getElementById('btnWeapons').addEventListener('click', function() {
-    showImages();
-    this.style.display = 'none'; // Cacher le bouton "Weapons" lorsque cliqué
-
-    document.getElementById('btnPick').style.display = 'inline-block';
-    document.getElementById('btnPickAll').style.display = 'inline-block';
-});
 
 // Créez une liste pour stocker les images sélectionnées
 var selectedWeapons = [];
@@ -62,3 +46,10 @@ function pickRandomWeapon() {
         alert("Aucune arme sélectionnée");
     }
 }
+
+function restartPage() {
+    location.reload(); // Recharge la page actuelle
+}
+
+// Ajoute un gestionnaire d'événement au bouton
+document.getElementById("btnWeapons").addEventListener("click", restartPage);
